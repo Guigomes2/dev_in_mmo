@@ -9,6 +9,7 @@ function Inputs({ value, setName }) {
                 value={value}
                 onChange={e => setName(e.target.value)}
             />
+            
         </div>
     )
 }

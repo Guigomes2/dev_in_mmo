@@ -3,7 +3,7 @@ import Inputs from './componets/Inputs';
 import React, { useEffect, useState } from 'react';
 
 function App() {
-  const {text, setName} = useState("");
+  const { text, setName } = useState("");
 
   // useEffect(() => {
   // if (text) {
@@ -14,13 +14,19 @@ function App() {
 
 
   return (
-    <label>O que você procura?   
-      <input
-        type="text"
-        value={text}
-        onChange={setName}
-      />
-    </label>
+    <>
+      <form>
+        <input
+          placeholder="O que você procura?"
+          type="text"
+          value={text}
+          onChange={setName}
+        />
+
+        <button onClick="">Procurar</button>
+
+      </form>
+    </>
   );
 }
 export default App;
