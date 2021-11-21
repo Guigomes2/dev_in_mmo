@@ -1,32 +1,25 @@
-import './App.css';
-import Inputs from './componets/Inputs';
-import React, { useEffect, useState } from 'react';
+import { Routes, Route, Link } from "react-router-dom";
+import Games from './pages/Games';
+import GameDetails from './pages/GameDetails';
+import GameNews from './pages/GameNews';
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+
 
 function App() {
-  const { text, setName } = useState("");
+  const rootElement = document.getElementById("root");
 
-  // useEffect(() => {
-  // if (text) {
-  // fetch('')
-  // .then(res => res.json())
-  // }
-  //}, [text]);
-
-
-  return (
+  return(
     <>
-      <form>
-        <input
-          placeholder="O que você procura?"
-          type="text"
-          value={text}
-          onChange={setName}
-        />
-
-        <button onClick="">Procurar</button>
-
-      </form>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Games />} />
+      <Route path="details/:id" element={<GameDetails />}/>
+      <Route path="news" element={<GameNews />}/>
+    </Routes>
+    </BrowserRouter>
+    
     </>
-  );
+    );
 }
 export default App;
